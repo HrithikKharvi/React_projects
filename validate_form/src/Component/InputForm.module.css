@@ -1,0 +1,12 @@
+.formControll{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    width:90%;
+    height: 180px;
+}
+
+.formControll button{
+    align-self: flex-end;
+}

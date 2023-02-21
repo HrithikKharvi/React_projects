@@ -1,0 +1,12 @@
+.card_outer{
+    width:100%;
+    min-height:100px;
+    height:auto;
+    background-color:white;
+    border-radius:12px;
+    color:black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}

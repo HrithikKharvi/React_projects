@@ -1,0 +1,10 @@
+.pageBody{
+    width:100%;
+    height:auto;
+    min-height: 50vh;
+    background-color: rgb(34, 33, 33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:50px 0;
+}

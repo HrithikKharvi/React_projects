@@ -1,0 +1,19 @@
+.card{
+    height:auto;
+    min-height:30vh;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:20px;
+}
+
+.card > div{
+    border-bottom:1px solid rgba(0, 0, 0, 0.603);
+}
+
+.card > div:nth-last-child(1){
+    border: none;
+}

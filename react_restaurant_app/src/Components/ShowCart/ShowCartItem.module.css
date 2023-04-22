@@ -1,0 +1,35 @@
+.itemContainer{
+    width:95%;
+    height:15vh;
+    display: flex;
+    padding: 10px 0;
+}
+
+.itemName{
+    font-weight: bold;
+    font-size:25px;
+}
+.costCount{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.price{
+    color:rgb(121, 50, 4);
+    font-size: 18px;
+    font-weight: bold;
+    width:60px;
+}
+
+.details{
+    width:75%;
+    height:100%;
+}
+.allButtons{
+    width:25%;
+    height:100%;
+    background-color:white;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,13 @@
+.cartItemContainer{
+    width:100%;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.cartItemContainer > div{
+    border-bottom: 1px solid rgb(94, 3, 3);
+}
+
+.cartItemContainer > div:nth-last-child(1){
+    border-bottom : none;
+}

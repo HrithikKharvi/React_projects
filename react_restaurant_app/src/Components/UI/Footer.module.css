@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding:10px 0;
+    border:none;
+    width:100%;
+}
+
+.spaceBetween{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.alignRight{
+    justify-content: right;
+}
+
+.alignCenter{
+    justify-content: center;
+}

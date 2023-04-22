@@ -1,0 +1,9 @@
+.labelContainer{
+    display: inline;
+    padding:10px 40px;
+    border-radius: 20px;
+}
+
+.labelContainer > button{
+    margin:0 5px;
+}

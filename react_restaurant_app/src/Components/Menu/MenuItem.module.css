@@ -1,0 +1,34 @@
+.menuItemCover{
+    width:95%;
+    height:15vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding:10px 0;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    margin:4px;
+}
+.item:nth-of-type(2){
+    height:20px;
+}
+
+.item div:nth-of-type(2){
+    width:20%;
+}
+
+.bold{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.price{
+    color:rgb(180, 84, 6);
+}
+
+.bottomBorder{
+    border-bottom:0.01px solid rgba(0, 0, 0, 0.384);
+}

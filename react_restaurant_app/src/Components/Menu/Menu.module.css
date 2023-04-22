@@ -1,0 +1,7 @@
+.menuContainer{
+    width: 60%;
+    height:auto;
+    min-height:50vh;
+    border-radius: 20px;
+    background-color: white;
+}

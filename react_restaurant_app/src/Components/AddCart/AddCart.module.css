@@ -1,0 +1,42 @@
+.addCartContainer{
+    margin-right:20px;
+    width:18%;
+    height:50px;
+    background-color: rgb(65, 27, 1);
+    border-radius: 20px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation-name: addCartAnimation;
+    animation-duration: 0.5s;
+}
+
+@keyframes addCartAnimation {
+
+    50%{
+        width : 20%;
+        height : 60px;
+    }
+
+    100%{
+        width: 18%;
+        height:50px;
+    }
+
+}
+
+.addCartContainer div{
+    margin:0 3px;
+}
+
+.itemCount{
+    width:40px;
+    height:30px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    background-color: rgb(134, 45, 4);
+}

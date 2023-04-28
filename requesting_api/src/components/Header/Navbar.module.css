@@ -1,0 +1,8 @@
+.navbarContainer{
+    background-color:#1a0635;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:15vh;
+}

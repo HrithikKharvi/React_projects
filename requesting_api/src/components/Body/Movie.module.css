@@ -1,0 +1,25 @@
+.movieCard{
+    background-color: white;
+    margin: 10px 0;
+    padding:10px;
+    width:100%;
+    border-radius: 20px;
+}
+
+.movieTitle{
+    margin: 5px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.movieCrawl{
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.movieRelease{
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+

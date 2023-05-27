@@ -1,0 +1,17 @@
+.lableName{
+    font-size:18px;
+    letter-spacing: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.inputBox{
+    border-radius:20px;
+    width:80%;
+    height:30px;
+    padding: 0 15px;
+}
+
+
+.errorField {
+    background-color: #ff1212;
+}

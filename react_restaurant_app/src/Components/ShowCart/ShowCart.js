@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 
 import Card from '../UI/Card.js'
 import ShowCartItem from './ShowCartItem.js'
@@ -6,10 +6,13 @@ import AppContext from '../../AppContext/app-context.js';
 import Button from '../UI/Button.js'
 import Footer from '../UI/Footer.js'
 import Label from '../UI/Label.js'
+import Order from './Order.js';
 
 import style from './ShowCart.module.css';
 
-const ShowCart = (props) =>{
+const ShowCart = (props) => {
+    const [placeOrder, setPlaceOrder] = useState(false);
+
     const ctx = useContext(AppContext);
     let itemsName = Object.keys(ctx.cart)
     let cartItems = ctx.cart;
@@ -20,16 +23,43 @@ const ShowCart = (props) =>{
      </div>
 
     function closeShowCartUI(){
-        props.onShowCartClose()
+        props.onShowCartClose();
     }
 
-
-
-    function printToConsole(){
-        console.log(ctx.total);
-        ctx.clearCart();
-        closeShowCartUI()
+    function uploadCartData(userdata) {
+        fetch('https://sample-backend-64c8c-default-rtdb.firebaseio.com/orders.json',
+            {
+                "method": 'POST',
+                body: JSON.stringify({
+                        userData: userdata,
+                        "cart": ctx.cart
+                })
+            }
+        ).then(() => {
+            closeShowCartUI();
+            ctx.clearCart();
+        })
     }
+
+    function showPlaceOrderUI() {
+        setPlaceOrder(true);
+    }
+
+    function cancelOrder() {
+        setPlaceOrder(false);
+    }
+
+    let showOrderUI = <Footer>
+                <Button className="addButton" style={{"width":"20%"}} onClick={closeShowCartUI}>Close</Button>
+                {!isCartEmpty ? <Button className="cartButton" style={{"width":"20%"}} onClick={showPlaceOrderUI}>Order</Button> : ""}
+    </Footer>
+    
+    if (placeOrder) {
+        showOrderUI = <Footer>
+                         <Order uploadOrder={uploadCartData} cancelOrder={cancelOrder}></Order>
+                      </Footer>
+    }
+
 
     return (
         <Card width="40%">
@@ -37,11 +67,8 @@ const ShowCart = (props) =>{
            <Footer className="spaceBetween">
                   <Label bold="bold" color="black">Total</Label>
                 <Label bold="bold" color="black">$ {ctx.total}</Label>
-           </Footer>
-           <Footer>
-                <Button className="addButton" style={{"width":"20%"}} onClick={closeShowCartUI}>Close</Button>
-                {!isCartEmpty ? <Button className="cartButton" style={{"width":"20%"}} onClick={printToConsole}>Order</Button> : ""}
             </Footer>
+            {showOrderUI}
         </Card>
     )
 }

@@ -14,7 +14,7 @@ function App() {
     const manageData = (data) =>{
       const loadedTasks = [];
       console.log("printing data ", data);
-
+      
       for (const taskKey in data) {
         loadedTasks.push({ id: taskKey, text: data[taskKey].text });
       }

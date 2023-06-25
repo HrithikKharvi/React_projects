@@ -10,7 +10,7 @@ function App() {
   const {isLoading,error,sendRequest:fetchTasks} = useHttp();
 
   useEffect(() => {
-    const httpConfig = {"url":"https://sample-backend-64c8c-default-rtdb.firebaseio.com/tasks.json"}
+    const httpConfig = {"url":""}
     const manageData = (data) =>{
       const loadedTasks = [];
       console.log("printing data ", data);

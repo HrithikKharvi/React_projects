@@ -1,0 +1,37 @@
+.card{
+    width:40%;
+    height:30vh;
+    background-color:white;
+    border-radius:20px;
+}
+
+.cardHeader{
+    text-align: center;
+}
+
+.cardBody{
+    margin-top:40px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    padding: 0 10px;
+}
+
+.counterValue{
+    width:20%;
+}
+
+.cardBody div:first-child{
+    display: flex;
+    height:5vh;
+    justify-content: center;
+    width:40%;
+    border:1px solid black;
+}
+
+.cardBody div:nth-child(2){
+    width:50%;
+    display: flex;
+    justify-content: space-around;
+}

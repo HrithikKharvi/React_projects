@@ -2,22 +2,26 @@ import React from 'react';
 import styles from './Card.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 
+import {counterAction} from '../store/storeFile.js'
+
 const Card = (props) => {
 
     const dispatch = useDispatch();
-    const counter = useSelector(state => state.counter);
-    const toggle = useSelector(state => state.toggle);
+    const counter = useSelector(state => {
+        return state.counter.counter;
+    });
+    const toggle = useSelector(state => state.counter.toggle);
 
     const incrementHandler = () => {
-        dispatch({ type: "increment" });
+        dispatch(counterAction.increment());
     }
 
     const decrementHandler = () => {
-        dispatch({ type: "decrement" });
+        dispatch(counterAction.decrement());
     }
     
     const toggleHandler = () => {
-        dispatch({ type: "toggle" });
+        dispatch(counterAction.toggle());
     }
     return (
         <div className={styles.card}>

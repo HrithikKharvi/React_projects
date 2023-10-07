@@ -1,0 +1,10 @@
+.container{
+    width:30%;
+    height:auto;
+    background-color:rgba(0, 0, 0, 0.623);
+    color:white;
+    min-height: 22vh;
+    position:relative;
+    padding:10px;
+    padding-top:20px;
+}

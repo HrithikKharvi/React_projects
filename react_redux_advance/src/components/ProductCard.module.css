@@ -1,0 +1,15 @@
+.container{
+    width:40%;
+    height: auto;
+    min-height:20vh;
+    background-color:white;
+
+    border-radius:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container > *{
+    margin:10px;
+}

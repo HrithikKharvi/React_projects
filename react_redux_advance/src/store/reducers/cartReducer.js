@@ -1,16 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import { cartActions } from '../../store/storeFile.js';
 const initialState = {
     "cart": [],
     "cost": +0,
-    "showCart" : false
+    "showCart": false,
+    "notification": null,
+    "isChanged" : false
 };
 
 const cartSlice = createSlice({
     name: "cart",
     "initialState": initialState,
     reducers: {
+        resetCartData(state, action) {
+            console.log("Received the initial data !");
+            state.cart = action.payload;
+        },
+
+        setNotification(state, action) {
+            let { message, notificationState } = action.payload;
+            state.notification = { message, "state" : notificationState };
+        },
+
         addToCart(state, action) {
+            state.isChanged = true;
             let itemName = action.payload.data.name;
             let itemCost = action.payload.data.cost;
             let itemCount = action.payload.data.count;
@@ -33,6 +46,7 @@ const cartSlice = createSlice({
         },
 
         removeFromCart(state, action) {
+            state.isChanged = true;
             let name = action.payload.data.name;
             let cost = action.payload.data.cost;
 

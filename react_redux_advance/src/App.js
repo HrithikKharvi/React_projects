@@ -5,20 +5,44 @@ import Navbar from './components/Navbar.js'
 import ShowCart from './components/ShowCart.js';
 import ProductCard from './components/ProductCard.js';
 import { useSelector, useDispatch } from 'react-redux';
+import Notification from './components/Notification.js';
+import { cartActions } from './store/storeFile.js';
+import { saveCartData, fetchCartData } from './store/reducers/cartActions.js';
+
+let isInitial = true;
+
 
 function App() {
   const showCart = useSelector(storeData => storeData.cart.showCart);
-  const cart = useSelector(d => d.cart.cart)
+  const notificationObject = useSelector(object => object.cart.notification);
+  const isChanged = useSelector(object => object.cart.isChanged);
 
-  useEffect(() => {
-    fetch("https://sample-backend-64c8c-default-rtdb.firebaseio.com/cart.json", {
-      method : "PUT",
-      body : JSON.stringify(cart)
-    })
-  })
+  const cart = useSelector(d => d.cart.cart)
+  const dispatch = useDispatch();
+
+
+  useEffect(
+    () => {
+      dispatch(fetchCartData());
+    }, []
+  )
+
+  useEffect(
+    () => {
+              if (isInitial) {
+                isInitial = false;
+                return;
+              }
+      
+      if(isChanged)
+      dispatch(saveCartData(cart));
+    }
+    , [cart, dispatch]
+  )
 
   return (
     <div className="App">
+      {notificationObject && <Notification></Notification>}
       <Navbar>
       </Navbar>
       {showCart ? <ShowCart></ShowCart> : ""}

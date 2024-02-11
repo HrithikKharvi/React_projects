@@ -1,0 +1,13 @@
+.navLinkStyle  li{
+    display:inline;
+    margin:10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover,
+.activate{
+    text-decoration: underline black;
+}
